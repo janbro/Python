@@ -23,15 +23,17 @@ while(a == 0):
     answer=raw_input("Encode or decode:")
 
     if answer.lower()==u'encode':
+        shift = int(raw_input("Input shift:"))
         plaintext=raw_input("Input words to encode:")
         print "Plaintext:", plaintext
-        print "Ciphertext:",caesar(plaintext,2)
+        print "Ciphertext:",caesar(plaintext,shift)
         a=1
         break
     if answer.lower()==u'decode':
+        shift = int(raw_input("Input shift:"))
         plaintext=raw_input("Input words to decode:")
         print "Ciphertext:", plaintext
-        print "Plaintext:", caesar(plaintext,-2)
+        print "Plaintext:", caesar(plaintext,shift)
         a=1
         break
     else:
