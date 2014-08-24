@@ -2,6 +2,8 @@ image = input('Image to decode: ')
 
 reader = open(image,'r')
 
+sizeheaderbyte = 3
+
 with open(image, 'r') as ppm:
   data = ppm.read()
 
@@ -21,7 +23,7 @@ messlength = ''
 count = 0
 for line in lines:
     for num in line.split(' '):
-        if count>6:
+        if count>6*sizeheaderbyte:
             break
         if not num=="":
             messlength+=str(bin(eval(num))[len(bin(eval(num)))-1])
