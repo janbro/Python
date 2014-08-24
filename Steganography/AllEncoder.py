@@ -1,6 +1,6 @@
 #First 3 bytes of header = file extension
 #Second set of bytes = message length(length of message length bytes is determined by size of carrier file
-#Over encoding - Once the end of the carrier file is reacahed, start encoding at the beggining of the second to last bit on each byte in the carrier file
+#Over encoding - Once the end of the carrier file is reached, start encoding at the beggining of the second to last bit on each byte in the carrier file
 import os
 import sys
 import base64
@@ -60,8 +60,6 @@ print "Contents converted"
 
 with open(carrierImage, 'r') as ppm:
   data = ppm.read()
-
-print data
 
 for line in data.split('\n')[:4]:
     outputFile.writelines(line)

@@ -66,8 +66,6 @@ secretmessage = ""
 for byte in messbytes:
     secretmessage+=chr(int(byte,2))
 
-print secretmessage
-
 with open('encodedMessage.'+extension, 'wb') as f:
     f.write(secretmessage)
 
