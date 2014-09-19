@@ -1,6 +1,6 @@
 # Import some necessary libraries.
 from __future__ import division
-import socket, requests
+import socket, requests, urllib2, subprocess, sys
 from collections import namedtuple
 from pprint import pprint as pp
 from HTMLParser import HTMLParser
@@ -165,7 +165,8 @@ def rpn_calc(tokens):
 
 #Commands for the bot
 proxies = {
-  "https": "tssproxy.broward.k12.fl.us:8888"
+  "https": "tssproxy.broward.k12.fl.us:8888",
+  "https":""
 }
 commands = {"math":lambda x:rpn_calc(get_input2(shunting(get_input(' '.join(x)))[-1][2]))[-1][2],
             "google":lambda x:strip_tags(HTMLParser().unescape(requests.get('https://ajax.googleapis.com/ajax/services/search/web?v=1.0&rsz=1&userip=24.53.222.246&q='+'%20'.join(x),proxies=proxies).json()["responseData"]['results'][0]['content'].encode('ascii','ignore'))).replace("\n"," ")
@@ -197,11 +198,18 @@ def is_number(s):
 def youtubeDownload(url):
   sendmsg(channel,"Downloading...")
   try:
-      result = call('youtube-dl -o "I:\My_Files\Youtube\%(title)s.%(ext)s" '+url[0],shell=False)
-      if not result:
-          return "Done! 24.51.212.246:2302"
-      else:
-          return "Failed to download"
+      urlfile = "youtubeurl.txt"
+
+      open(urlfile,'w').writelines(url[0])
+      DETACHED_PROCESS = 0x00000008
+      pid = subprocess.Popen([sys.executable, "downloadVideo.py"],
+                       creationflags=DETACHED_PROCESS).pid
+      
+      #if not result:
+      my_ip = urllib2.urlopen('http://ip.42.pl/raw').read()
+      return my_ip+":2302"
+      #else:
+      #    return "Failed to download"
   except:
       return "Command Execution Failed"
     
