@@ -1,6 +1,5 @@
 import os
 import sys
-import base64
 from math import log
 
 inputImage = input("Image to decode:")

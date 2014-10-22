@@ -213,6 +213,7 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+<<<<<<< HEAD
 doodoomonster.py
 doodoo.txt
 IRC Bot/youtube/Flight of the Conchords-Robots.mp4
@@ -222,3 +223,12 @@ Nico/hotel.py
 Nico/travel.py
 Nico/vacation.py
 Nico/vacation2.py
+=======
+Steganography/Images/bw.ppm
+Steganography/Images/encodedImage.ppm
+Steganography/Images/encodedMessage.png
+*.wma
+*.png
+*.ppm
+*.pdf
+>>>>>>> origin/master

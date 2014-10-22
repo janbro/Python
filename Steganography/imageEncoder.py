@@ -7,15 +7,15 @@ messes = ""
 
 tmpbyte = bin(len(message))[2:]
 
-sizeheaderbytes = 1
+sizeheaderbytes = 3
 
-while len(tmpbyte)<7*sizeheaderbytes:
+while len(tmpbyte)<8*sizeheaderbytes:
   tmpbyte="0"+tmpbyte
 messes+=tmpbyte
 
 for char in message:
   tempbyte = bin(ord(char))[2:]
-  while len(tempbyte)<7*sizeheaderbytes:
+  while len(tempbyte)<8:
     tempbyte="0"+tempbyte
   messes+=tempbyte
 
