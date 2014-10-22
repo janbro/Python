@@ -3,7 +3,6 @@
 #Over encoding - Once the end of the carrier file is reached, start encoding at the beggining of the second to last bit on each byte in the carrier file
 import os
 import sys
-import base64
 from math import log
 
 carrierImage = input("Input carrier image:")
