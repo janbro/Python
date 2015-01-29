@@ -195,7 +195,7 @@ while True:
     if isMoving==False:
         beetleStill['cycleState']+=beetleStill['modifier']
 
-    pygame.time.delay(10)
+    pygame.time.delay(75)
     framesPast+=1
 
     pygame.display.update()
