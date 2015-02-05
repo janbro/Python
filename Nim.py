@@ -1,6 +1,6 @@
 print "The object of the game is to make your opponent pick the last coin.\nOn each turn you can take 1,2, or 3 coins. The game starts with 18 coins."
 coins = 18
-nimsum = 4 #Nimsum is precalculate based on array k of length n, where k is an array of consecutive positive integer, Nimsum = k[0]+k[n]
+nimsum = 4 #Nimsum is precalculate based on array of the options, k, of length n, where k is an array of consecutive positive integer, Nimsum = k[0]+k[n]
 take = 0
 won = False
 while coins > 0:
